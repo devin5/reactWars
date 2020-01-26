@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Loading from "./Loading";
 import axios from "axios";
+import { Button } from "reactstrap";
 
 export default function CharContain() {
   const [chars, setChars] = useState([]);
@@ -20,7 +21,8 @@ export default function CharContain() {
     setLoading(true);
     axios
       .get(next)
-      .then(res => (setUrl(next), setNext(res.data.next), setLoading(false)))
+      .then(res => (setUrl(next), setNext(res.data.next)))
+      // .then(() => setLoading(false))
       .catch(err => console.log(err));
   };
 
@@ -28,11 +30,8 @@ export default function CharContain() {
     setLoading(true);
     axios
       .get(previous)
-      .then(
-        res => (
-          setUrl(previous), setPrevious(res.data.previous), setLoading(false)
-        )
-      )
+      .then(res => (setUrl(previous), setPrevious(res.data.previous)))
+
       .catch(err => console.log(err));
   };
 
@@ -59,21 +58,25 @@ export default function CharContain() {
           <Loading />
         ) : (
           <div>
-            <button
+            <Button
+              id="butt"
+              size="sm"
               className={previous ? "active" : "notActive"}
               disabled={!previous}
               onClick={prevPage}
             >
               previous
-            </button>
+            </Button>
 
-            <button
+            <Button
+              id="butt"
+              size="sm"
               disabled={!next}
               className={next ? "active" : "notActive"}
               onClick={nextPage}
             >
               next
-            </button>
+            </Button>
 
             {chars.map(char => (
               <div className="card">
