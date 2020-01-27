@@ -1,7 +1,65 @@
 .App {
   text-align: center;
 }
+.headContain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3%;
+}
+label {
+  font-size: 50px;
+  cursor: pointer;
+  margin: 3% 3%;
+}
+nav {
+  text-align: right;
+  height: 10%;
+  line-height: 10%;
+}
+.menu {
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(100, 52, 7, 0.832),
+    rgba(146, 89, 35, 0.821)
+  );
 
+  position: fixed;
+  left: -30%;
+  top: 0;
+  width: 30%;
+  height: 100vh;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  z-index: 10;
+}
+.menu a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #eedbb8;
+  line-height: 7rem;
+  display: block;
+  border-bottom: 1px solid black;
+  transition: 0.6s;
+}
+.menu a:hover {
+  background-color: #eedbb8b6;
+
+  font-weight: 700;
+
+  color: #3f2901;
+}
+.menuImg {
+  width: 50%;
+  margin: 15% 0;
+}
+
+#toggle {
+  display: none;
+}
+#toggle:checked + .menu {
+  left: 0;
+}
 .appHead {
   margin: 4%;
   font-size: 5rem;
