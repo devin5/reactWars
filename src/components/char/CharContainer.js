@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Loading from "./Loading";
-import NextButton from "./buttons/NextButton";
+import Loading from "../Loading";
+import NextButton from "../buttons/NextButton";
+import Header from "../Header";
 import axios from "axios";
-import PreviousButton from "./buttons/PreviousButton";
+import PreviousButton from "../buttons/PreviousButton";
 import Card from "./Card";
-import { Button } from "reactstrap";
 
 export default function CharContain() {
   const [chars, setChars] = useState([]);
@@ -37,18 +37,20 @@ export default function CharContain() {
           setChars(res.data.results.map(item => item)),
           setNext(res.data.next),
           setPrevious(res.data.previous),
-          setLoading(false)
+          setLoading(false),
+          console.log(res)
         )
       )
       .catch(err => console.log(err));
   }, [url]);
   return (
     <>
+      <Header />
       <div className="container">
         {loading ? (
           <Loading />
         ) : (
-          <div>
+          <>
             <PreviousButton prevPage={prevPage} previous={previous} />
             <NextButton nextPage={nextPage} next={next} />
             <div className="flex">
@@ -56,7 +58,7 @@ export default function CharContain() {
                 <Card char={char} />
               ))}
             </div>
-          </div>
+          </>
         )}
       </div>
     </>

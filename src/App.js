@@ -1,12 +1,16 @@
 import React from "react";
 import "./App.css";
-import CharContainer from "./components/CharContainer";
+import CharContainer from "./components/char/CharContainer";
+import Menu from "./components/Menu";
+import { Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <h1 class="appHead">StarWars characters</h1>
-      <CharContainer />
+      <Menu />
+      <Route exact path="/">
+        <CharContainer />
+      </Route>
     </div>
   );
 }

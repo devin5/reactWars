@@ -7,7 +7,7 @@ function NextButton(props) {
       id="butt"
       size="sm"
       disabled={!props.next}
-      className={props.nextPage ? "active" : "notActive"}
+      className={props.next ? "active" : "notActive"}
       onClick={props.nextPage}
     >
       next
