@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Loading from "./Loading";
+import NextButton from "./buttons/NextButton";
 import axios from "axios";
+import PreviousButton from "./buttons/PreviousButton";
+import Card from "./Card";
 import { Button } from "reactstrap";
 
 export default function CharContain() {
@@ -9,20 +12,12 @@ export default function CharContain() {
   const [previous, setPrevious] = useState();
   const [url, setUrl] = useState(`https://swapi.co/api/people`);
   const [loading, setLoading] = useState(true);
-
-  // const page = (state, setState) => {
-  //   axios
-  //     .get(state)
-  //     .then(res => (setUrl(state), setState(res.data.state)))
-  //     .catch(err => console.log(err));
-  // };
-
+  console.log(chars);
   const nextPage = () => {
     setLoading(true);
     axios
       .get(next)
       .then(res => (setUrl(next), setNext(res.data.next)))
-      // .then(() => setLoading(false))
       .catch(err => console.log(err));
   };
 
@@ -31,7 +26,6 @@ export default function CharContain() {
     axios
       .get(previous)
       .then(res => (setUrl(previous), setPrevious(res.data.previous)))
-
       .catch(err => console.log(err));
   };
 
@@ -48,9 +42,6 @@ export default function CharContain() {
       )
       .catch(err => console.log(err));
   }, [url]);
-
-  console.log(chars);
-  console.log("I'm res", next);
   return (
     <>
       <div className="container">
@@ -58,33 +49,13 @@ export default function CharContain() {
           <Loading />
         ) : (
           <div>
-            <Button
-              id="butt"
-              size="sm"
-              className={previous ? "active" : "notActive"}
-              disabled={!previous}
-              onClick={prevPage}
-            >
-              previous
-            </Button>
-
-            <Button
-              id="butt"
-              size="sm"
-              disabled={!next}
-              className={next ? "active" : "notActive"}
-              onClick={nextPage}
-            >
-              next
-            </Button>
-
-            {chars.map(char => (
-              <div className="card">
-                <h1>Name:{char.name}</h1>
-                <p>height:{char.height}</p>
-                <p>mass:{char.mass}</p>
-              </div>
-            ))}
+            <PreviousButton prevPage={prevPage} previous={previous} />
+            <NextButton nextPage={nextPage} next={next} />
+            <div className="flex">
+              {chars.map(char => (
+                <Card char={char} />
+              ))}
+            </div>
           </div>
         )}
       </div>

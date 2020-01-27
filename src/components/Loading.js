@@ -7,54 +7,6 @@ const Loading = props => {
       <Spinner type="grow" className="spin" />
       <Spinner type="grow" className="spin" />{" "}
       <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />{" "}
-      <Spinner type="grow" className="spin" />
     </div>
   );
 };
