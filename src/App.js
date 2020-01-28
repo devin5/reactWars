@@ -17,9 +17,9 @@ function App() {
       <Route exact path="/">
         <CharContainer />
       </Route>
-      {/* <Route exact path="/char/:id">
+      <Route exact path="/char/:id">
         <Char />
-      </Route> */}
+      </Route>
       <Route path="/starships">
         <StarContain />
       </Route>

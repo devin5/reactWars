@@ -16,7 +16,9 @@ export default function CharCard(props) {
         G
       </CardText>
       <Button
-        onClick={() => history.push(`/char/${props.char.id}`)}
+        onClick={() =>
+          history.push(`/char/${props.char.name}`, { url: props.char.url })
+        }
         className="cardButton"
       >
         Learn More

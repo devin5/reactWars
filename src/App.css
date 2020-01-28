@@ -3,9 +3,9 @@
 }
 .headContain {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-left: 3%;
+  margin-left: 30%;
 }
 label {
   font-size: 50px;
@@ -124,4 +124,11 @@ nav {
 }
 .head {
   font-size: 1.5rem;
+}
+
+.bigcard {
+  margin: 5% auto;
+}
+.bgbutton {
+  margin: 4%;
 }
