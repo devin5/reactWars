@@ -55,9 +55,9 @@ export default function CharContain() {
             <PreviousButton prevPage={prevPage} previous={previous} />
             <NextButton nextPage={nextPage} next={next} />
             <div className="flex">
-              {chars.map(char => (
-                <Card char={char} />
-              ))}
+              {chars.map(
+                char => (console.log("ik char", char), (<Card char={char} />))
+              )}
             </div>
           </>
         )}

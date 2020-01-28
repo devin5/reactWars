@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import CharContainer from "./components/char/CharContainer";
+import Char from "./components/char/Char";
 import Menu from "./components/Menu";
 import { Route } from "react-router-dom";
 import StarContain from "./components/star/StarContain";
@@ -16,6 +17,9 @@ function App() {
       <Route exact path="/">
         <CharContainer />
       </Route>
+      {/* <Route exact path="/char/:id">
+        <Char />
+      </Route> */}
       <Route path="/starships">
         <StarContain />
       </Route>
