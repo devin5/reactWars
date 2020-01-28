@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEfeect, useState, useEffect } from "react";
+import axios from "axios";
+import Star from "./Star";
+import Header from "../Header";
 import Loading from "../Loading";
 import NextButton from "../buttons/NextButton";
-import Header from "../Header";
-
-import axios from "axios";
 import PreviousButton from "../buttons/PreviousButton";
-import Card from "./Card";
 
-export default function CharContain() {
-  const [chars, setChars] = useState([]);
+export default function StarContain() {
+  const [ships, setShips] = useState([]);
   const [next, setNext] = useState();
   const [previous, setPrevious] = useState();
-  const [url, setUrl] = useState(`https://swapi.co/api/people`);
+  const [url, setUrl] = useState(`https://swapi.co/api/starships/`);
   const [loading, setLoading] = useState(true);
-  console.log(chars);
+
   const nextPage = () => {
     setLoading(true);
     axios
@@ -35,7 +34,7 @@ export default function CharContain() {
       .get(url)
       .then(
         res => (
-          setChars(res.data.results.map(item => item)),
+          setShips(res.data.results),
           setNext(res.data.next),
           setPrevious(res.data.previous),
           setLoading(false),
@@ -44,9 +43,12 @@ export default function CharContain() {
       )
       .catch(err => console.log(err));
   }, [url]);
+
+  console.log(ships);
+
   return (
     <>
-      <Header title={"Characters"} />
+      <Header title={"Starships"} />
       <div className="container">
         {loading ? (
           <Loading />
@@ -55,8 +57,8 @@ export default function CharContain() {
             <PreviousButton prevPage={prevPage} previous={previous} />
             <NextButton nextPage={nextPage} next={next} />
             <div className="flex">
-              {chars.map(char => (
-                <Card char={char} />
+              {ships.map(ship => (
+                <Star ship={ship} />
               ))}
             </div>
           </>

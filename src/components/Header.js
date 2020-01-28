@@ -1,9 +1,9 @@
 import React from "react";
 
-function Header() {
+function Header(props) {
   return (
     <div className="headContain">
-      <h1 class="appHead">StarWars characters</h1>
+      <h1 class="appHead">StarWars {props.title}</h1>
       <label for="toggle">&#9776;</label>
     </div>
   );

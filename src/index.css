@@ -8,5 +8,6 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
   /* max-height: 100vh; */
+  background-attachment: fixed;
   font-family: "Lexend Tera", sans-serif;
 }
