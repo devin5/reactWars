@@ -8,12 +8,11 @@ export default function Menu() {
       <input type="checkbox" id="toggle" />
       <div class="menu">
         <Link to="/">Characters</Link>
-
-        <a href="#">Practice</a>
-        <a href="#">Practice</a>
-        <a href="#">Practice</a>
-        <a href="#">Practice</a>
-        <a href="#">Practice</a>
+        <Link to="/starships">Starships</Link>
+        <Link to="/films">Films</Link>
+        <Link to="/vehicles">Vehicles</Link>
+        <Link to="/species">Species</Link>
+        <Link to="/planets">Planets</Link>
 
         <img class="menuImg" src={photo} alt="Star warsLogo" />
       </div>

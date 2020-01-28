@@ -8,12 +8,12 @@ import PreviousButton from "../buttons/PreviousButton";
 import Card from "./Card";
 
 export default function CharContain() {
-  const [chars, setChars] = useState([]);
+  const [ve, setVe] = useState([]);
   const [next, setNext] = useState();
   const [previous, setPrevious] = useState();
-  const [url, setUrl] = useState(`https://swapi.co/api/people`);
+  const [url, setUrl] = useState(`https://swapi.co/api/vehicles/`);
   const [loading, setLoading] = useState(true);
-  console.log(chars);
+
   const nextPage = () => {
     setLoading(true);
     axios
@@ -35,7 +35,7 @@ export default function CharContain() {
       .get(url)
       .then(
         res => (
-          setChars(res.data.results.map(item => item)),
+          setVe(res.data.results),
           setNext(res.data.next),
           setPrevious(res.data.previous),
           setLoading(false),
@@ -46,7 +46,7 @@ export default function CharContain() {
   }, [url]);
   return (
     <>
-      <Header title={"Characters"} />
+      <Header title={"Vehicles"} />
       <div className="container">
         {loading ? (
           <Loading />
@@ -55,8 +55,8 @@ export default function CharContain() {
             <PreviousButton prevPage={prevPage} previous={previous} />
             <NextButton nextPage={nextPage} next={next} />
             <div className="flex">
-              {chars.map(char => (
-                <Card char={char} />
+              {ve.map(ve => (
+                <Card ve={ve} />
               ))}
             </div>
           </>

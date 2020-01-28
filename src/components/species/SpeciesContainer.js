@@ -5,15 +5,15 @@ import Header from "../Header";
 
 import axios from "axios";
 import PreviousButton from "../buttons/PreviousButton";
-import Card from "./Card";
+import SpeciesCard from "./SpeciesCard";
 
 export default function CharContain() {
-  const [chars, setChars] = useState([]);
+  const [species, setSpecies] = useState([]);
   const [next, setNext] = useState();
   const [previous, setPrevious] = useState();
-  const [url, setUrl] = useState(`https://swapi.co/api/people`);
+  const [url, setUrl] = useState(`https://swapi.co/api/species/`);
   const [loading, setLoading] = useState(true);
-  console.log(chars);
+
   const nextPage = () => {
     setLoading(true);
     axios
@@ -35,7 +35,7 @@ export default function CharContain() {
       .get(url)
       .then(
         res => (
-          setChars(res.data.results.map(item => item)),
+          setSpecies(res.data.results),
           setNext(res.data.next),
           setPrevious(res.data.previous),
           setLoading(false),
@@ -46,7 +46,7 @@ export default function CharContain() {
   }, [url]);
   return (
     <>
-      <Header title={"Characters"} />
+      <Header title={"Species"} />
       <div className="container">
         {loading ? (
           <Loading />
@@ -55,8 +55,8 @@ export default function CharContain() {
             <PreviousButton prevPage={prevPage} previous={previous} />
             <NextButton nextPage={nextPage} next={next} />
             <div className="flex">
-              {chars.map(char => (
-                <Card char={char} />
+              {species.map(species => (
+                <SpeciesCard species={species} />
               ))}
             </div>
           </>
