@@ -30,10 +30,13 @@ export default function Char() {
         <>
           <Header title={`${char.name}`} />
           <Card className="cardCon bigcard">
-            <Button onClick={history.goBack} outline color="danger">
-              return
-            </Button>
-            <CardTitle className="head">{char.name}</CardTitle>
+            <Button
+              className="return cardButton"
+              onClick={history.goBack}
+              outline
+              color="danger"
+            ></Button>
+            <CardTitle className="charHead head">{char.name}</CardTitle>
             <CardSubtitle>Height: {char.height}</CardSubtitle>
             <CardSubtitle>Mass: {char.mass}</CardSubtitle>
             <CardSubtitle>Hair Color: {char.hair_color}</CardSubtitle>

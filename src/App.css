@@ -3,9 +3,8 @@
 }
 .headContain {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  margin-left: 30%;
 }
 label {
   font-size: 50px;
@@ -61,7 +60,8 @@ nav {
   left: 0;
 }
 .appHead {
-  margin: 4%;
+  width: 100%;
+  margin: 0 auto;
   font-size: 5rem;
   font-weight: 800;
   color: rgb(78, 39, 2);
@@ -70,6 +70,8 @@ nav {
   animation: glow 1.5s linear infinite;
 }
 
+/* .appHead h1 {
+} */
 #butt {
   background-color: rgba(168, 107, 50, 0.6);
   width: 17%;
@@ -101,7 +103,7 @@ nav {
   width: 40%;
   /* height: 200px; */
   margin: 3%;
-  padding: 4% 6%;
+  padding: 2% 6%;
 }
 .container {
   width: 100%;
@@ -122,12 +124,19 @@ nav {
   color: #fff;
   transform: translateY(-7px);
 }
+.charHead {
+  font-size: 3rem;
+}
+
+.return {
+  margin-bottom: 7%;
+}
 .head {
   font-size: 1.5rem;
 }
 
 .bigcard {
-  margin: 5% auto;
+  margin: 10% auto;
 }
 .bgbutton {
   margin: 4%;
